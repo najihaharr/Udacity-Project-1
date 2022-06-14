@@ -25,7 +25,7 @@
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-files" role="tabpanel" aria-labelledby="nav-files-tab">
-                        <form th:action="@{/home}" action="#" enctype="multipart/form-data" method="POST">
+                        <form th:action="@{/home/file-upload}" action="#" th:object="${newFile}" enctype="multipart/form-data" method="POST">
                             <div class="container">
                                 <div class="row" style="margin: 1em;">
                                     <div class="col-sm-2">
@@ -75,7 +75,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr th:each="note: ${notes}">
+                                    <tr th:each="note : ${notes}">
                                         <td>
                                             <button id="edit-note" type="button" class="btn btn-success">Edit</button>
                                             <a class="btn btn-danger">Delete</a>
